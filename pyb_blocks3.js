@@ -8,7 +8,11 @@ function message(msg)
 
 var pyBoardToolBox={
 		"kind": "flyoutToolbox",
-		"contents": [			
+		"contents": [	
+			{
+				"kind": "block",
+				"type": "yellowled"
+			},	
 			{
 				"kind": "block",
 				"type": "math_number",
