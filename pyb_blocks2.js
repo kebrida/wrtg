@@ -37,3 +37,22 @@ var pyBoardToolBox={
 			}
 		]
 	  };
+
+Blockly.Blocks['yellowled'] = {
+  init: function() {
+    this.appendValueInput("seconds")
+    .appendField(new Blockly.FieldImage("https://cdn.jsdelivr.net/gh/kebrida/wrtg//images/yellow_led.png", 32, 32, { alt: "*", flipRtl: "FALSE" }))
+        .setCheck("Number");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(250);
+ this.setTooltip("turn on yellow");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Python['yellowled'] = function(block) {
+  var value_seconds = Blockly.Python.valueToCode(block, 'seconds', Blockly.Python.ORDER_ATOMIC);
+  var code ='pyb.LED(3).on()\n';
+  return code;
+};
